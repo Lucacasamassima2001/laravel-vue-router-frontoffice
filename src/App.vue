@@ -14,9 +14,9 @@ export default {
 </script>
 
 <template>
-  <AppHeader></AppHeader>
-  <AppIndex></AppIndex>
-  <AppFooter></AppFooter>
+  <AppHeader />
+  <AppIndex  />
+  <AppFooter />
 
 </template>
 

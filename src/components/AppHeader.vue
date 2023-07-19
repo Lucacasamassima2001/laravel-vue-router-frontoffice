@@ -11,7 +11,7 @@ export default {
 
 <template>
   <h1>sono l'header</h1>
-  <AppNav></AppNav>
+  <AppNav />
 </template>
 
 
