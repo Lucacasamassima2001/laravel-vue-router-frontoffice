@@ -1,18 +1,6 @@
-<script>
-import AppHeader from './components/AppHeader.vue';
-import AppIndex from './components/AppIndex.vue';
-import AppFooter from './components/AppFooter.vue';
-
-export default {
-  components:{
-    AppHeader,
-    AppIndex,
-    AppFooter,
-  }
-}
+<script setup>
+import HelloWorld from './components/HelloWorld.vue'
 </script>
-
-
 
 <template>
   <AppHeader></AppHeader>
