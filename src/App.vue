@@ -17,7 +17,6 @@ export default {
   <AppHeader />
   <AppIndex  />
   <AppFooter />
-
 </template>
 
 
