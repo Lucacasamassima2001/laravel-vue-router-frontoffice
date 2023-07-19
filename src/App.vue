@@ -1,10 +1,17 @@
-<script></script>
+<script setup>
+import HelloWorld from './components/HelloWorld.vue'
+</script>
 
 <template>
-  <h1 class="text-danger">Ciao Booleaners</h1>
+  <AppHeader></AppHeader>
+  <AppIndex></AppIndex>
+  <AppFooter></AppFooter>
+
 </template>
 
+
+
 <style lang="scss">
-/* Import all of Bootstrap's CSS */
-@import "bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/bootstrap";
+
 </style>
