@@ -1,4 +1,15 @@
-<script >
+<script>
+import AppHeader from './components/AppHeader.vue';
+import AppFooter from './components/AppFooter.vue';
+import AppIndex from './components/AppIndex.vue';
+
+export default {
+  components:{
+    AppHeader,
+    AppFooter,
+    AppIndex,
+  }
+}
 
 </script>
 
