@@ -98,7 +98,7 @@ export default {
 			<h2 class="title">Ti raccontiamo le nostre MixTales</h2>
 			<p class="text">
 				Un'esperienza unica e avvincente nel mondo dei cocktail, dove ogni sorso
-				è un viaggio emozionante tra gusti, colori e profumi.
+				è una storia emozionante tra gusti, colori e profumi.
 			</p>
 		</div>
 
@@ -138,19 +138,25 @@ export default {
 				@mouseover="stopAutoScroll"
 				@mouseleave="startAutoScroll"
 				class="carousel-arrows">
-				<font-awesome-icon icon="fa-solid fa-chevron-left" @click="prevImage" />
-				<font-awesome-icon
+				<p class="fa-chevron-left" @click="prevImage">S</p>
+				<p class="fa-chevron-right" @click="nextImage">S</p>
+				<!-- <font-awesome-icon icon="fa-solid fa-chevron-left" @click="prevImage" /> -->
+				<!-- <font-awesome-icon
 					icon="fa-solid fa-chevron-right"
-					@click="nextImage" />
+					@click="nextImage" /> -->
 			</div>
 		</div>
 	</div>
-	<button class="dark">Inizia il racconto</button>
+	<div class="start">
+		<router-link class="home-button" :to="{name: 'drinks'}"
+			>Inizia il racconto</router-link
+		>
+	</div>
 </template>
 
 <style lang="scss" scoped>
 $mainColor: #55328b;
-$textColor: #676371;
+$textColor: #9685c2;
 
 *,
 *::after,
@@ -172,7 +178,7 @@ h1 {
 	margin: 0 auto;
 	display: grid;
 	align-content: center;
-	grid-template-columns: 1fr 3fr;
+	grid-template-columns: 2fr 5fr;
 	grid-template-areas: "txt carousel";
 	gap: 5rem;
 	text-align: left;
@@ -181,25 +187,19 @@ h1 {
 		grid-area: txt;
 		align-self: center;
 
-		.under-text {
-			height: 2.5rem;
-			background-color: white;
+		.title {
 			color: $mainColor;
+			margin-bottom: 5rem;
+			line-height: 4rem;
 		}
 
-		.name {
-			text-align: center;
-			font-size: 1.5rem;
-			font-weight: 700;
-			line-height: 1.5rem;
-		}
-
-		.description {
-			font-size: 0.8rem;
-			line-height: 2rem;
+		.text {
+			color: $textColor;
+			font-size: 1.2rem;
+			font-style: italic;
+			line-height: 2.5rem;
 		}
 	}
-
 	.carousel-container {
 		grid-area: carousel;
 		position: relative;
@@ -208,6 +208,27 @@ h1 {
 		align-self: start;
 		overflow: hidden;
 	}
+}
+
+.under-text {
+	height: 2.5rem;
+	background-color: white;
+	color: $mainColor;
+}
+
+.name {
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height: 1.5rem;
+	color: $mainColor;
+}
+
+.description {
+	text-align: center;
+	font-size: 1rem;
+	line-height: 2rem;
+	color: $textColor;
 }
 
 .splide__slide {
@@ -262,28 +283,11 @@ h1 {
 		}
 	}
 }
-.under-text {
-	height: 2.5rem;
-	color: $mainColor;
-}
-
-.name {
-	font-family: "Source Serif Pro";
-	font-size: 1.5rem;
-	font-weight: 700;
-	line-height: 1.5rem;
-}
-
-.price {
-	font-size: 1.15rem;
-	font-weight: 500;
-	margin-top: 1rem;
-}
 
 .carousel-arrows {
 	position: absolute;
 	top: 50%;
-	transform: translateY(calc(-50% - 2.2rem - 0.5rem));
+	transform: translateY(calc(-50% - 2 * 2.2rem - 1rem));
 	left: 0;
 	right: 0;
 	text-align: center;
@@ -295,14 +299,34 @@ h1 {
 	color: white;
 	position: absolute;
 	left: 0;
-	background-color: #a691b2;
+	background-color: #523464;
+	border: 1px solid white;
 }
+
 .fa-chevron-right {
 	line-height: 1rem;
 	padding: 2.2rem 1rem;
 	color: white;
 	position: absolute;
 	right: 0;
-	background-color: #a691b2;
+	background-color: #523464;
+	border: 1px solid white;
+}
+
+.start {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 1rem 2.5rem;
+
+	.home-button {
+		background-color: $mainColor;
+		color: white;
+		padding: 1rem 2rem;
+		border-radius: 20rem;
+		text-decoration: none;
+		font-size: 1.3rem;
+		margin: 0;
+	}
 }
 </style>
