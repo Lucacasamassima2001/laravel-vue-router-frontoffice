@@ -7,7 +7,7 @@ export default {
 
 
 <template>
-  <h1>show</h1>
+  <h1>index</h1>
 </template>
 
 
