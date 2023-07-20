@@ -3,16 +3,17 @@ import axios from "axios";
 export default {
   created() {
     // richiesta axios per i dati del post
-    // axios
-    //   .get(this.store.baseUrl + "api/portfolios/" + this.$route.params.id)
-    //   .then((response) => {
-    //     if (response.data.success) {
-    //       this.portfolio = response.data.results;
-    //     } else {
-    //       // this.$router.push({ name: "page404" });
-    //       this.is404 = true;
-    //     }
-    //   });
+    axios
+      .get("http://localhost:8000/api/drinks/" + this.$route.params.id)
+      .then((response) => {
+        if (response.data.success) {
+          this.portfolio = response.data.results;
+        }
+        //  else {
+        //   // this.$router.push({ name: "page404" });
+        //   this.is404 = true;
+        // }
+      });
   },
 };
 </script>
