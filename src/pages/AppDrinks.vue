@@ -69,10 +69,20 @@ export default {
 </script>
 
 <template>
+  <img
+    class="bg_bar z-1"
+    src="../../public/bg-drink-index.png"
+    alt="bg-index"
+  />
+  <img
+    class="bg_drink z-1"
+    src="../../public/bg-drink-index.png"
+    alt="bg-index-drink"
+  />
   <div class="container">
     <h1 class="text-center mt-3">I Nostri Cocktails</h1>
     <div v-if="!loader" class="row row-cols-3 g-5 my-5">
-      <div v-for="drink in drinks" :key="drink.id" class="col">
+      <div v-for="drink in drinks" :key="drink.id" class="col z-3">
         <router-link
           class="text-decoration-none"
           :to="{ name: 'drinks.show', params: { id: drink.id } }"
@@ -97,7 +107,7 @@ export default {
       </div>
     </div>
     <nav>
-      <ul class="pagination">
+      <!-- <ul class="pagination">
         <li class="page-item">
           <button
             class="page-link bg-dark"
@@ -128,7 +138,20 @@ export default {
             Next
           </button>
         </li>
-      </ul>
+      </ul> -->
+      <div class="pagination p6">
+        <ul>
+          <a
+            href="#"
+            v-for="page in nPages"
+            :key="page"
+            class="page-item"
+            :class="{ is_active: page == currentPage }"
+            @click="changePage(page)"
+            ><li></li
+          ></a>
+        </ul>
+      </div>
     </nav>
   </div>
 </template>
@@ -139,8 +162,24 @@ $secondary-color: #e81cff;
 $tertiary-color: #40c9ff;
 $quaternary-color: #fc00ff;
 $quinary-color: #00dbde;
+
+.bg_bar {
+  position: absolute;
+  // height: rem;
+  bottom: 3rem;
+  left: -7rem;
+  transform: rotate(90deg);
+}
+
+.bg_drink {
+  position: absolute;
+  right: -7rem;
+  bottom: 20rem;
+  transform: rotate(270deg);
+}
 .container {
   margin-top: 8rem;
+  // background-image: url(../../public/bg-index.jpg);
   h1 {
     color: $primary-color;
   }
@@ -254,34 +293,64 @@ $quinary-color: #00dbde;
     }
   }
 }
-
-// paginator
-
-ul.pagination {
-  --bs-pagination-border-color: black;
-  .page-item {
-    .page-link {
-      color: $secondary-color;
-
-      &:hover {
-        background-color: gray;
-        color: $secondary-color;
-        border-color: $secondary-color;
-      }
-    }
-
-    &.active {
-      .page-link {
-        background-color: gray;
-        border-color: $secondary-color;
-      }
-    }
-  }
-}
-
 @keyframes loadtwo {
   50% {
     transform: rotate(-80deg);
   }
 }
+
+// paginator
+
+.pagination {
+  padding: 30px 0;
+}
+
+.pagination ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.pagination a {
+  display: inline-block;
+  padding: 10px 18px;
+  color: #222;
+}
+
+.p6 a {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  padding: 0;
+  margin: auto 5px;
+  text-align: center;
+  position: relative;
+  background-color: $primary-color;
+}
+
+.p6 .is_active {
+  background-color: $tertiary-color;
+}
+
+// ul.pagination {
+//   --bs-pagination-border-color: black;
+//   .page-item {
+//     .page-link {
+//       color: $secondary-color;
+
+//       &:hover {
+//         background-color: gray;
+//         color: $secondary-color;
+//         border-color: $secondary-color;
+//       }
+//     }
+
+//     &.active {
+//       .page-link {
+//         background-color: gray;
+//         border-color: $secondary-color;
+//       }
+//     }
+//   }
+// }
 </style>
