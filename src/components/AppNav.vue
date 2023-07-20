@@ -1,53 +1,113 @@
 <script>
-
-export default {
-
-}
+  export default {};
 </script>
 
-
 <template>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">Mixology</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li>
-          <router-link :to="{name: 'about'}">
-                <a class="nav-link active" aria-current="page" href="#">About</a>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{name: 'drinks'}">
-                <a class="nav-link active" aria-current="page" href="#">Drinks</a>
-          </router-link>
-        </li>
-        <!-- <li class="nav-item dropdown"> -->
-          <!-- <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a> -->
-          <!-- <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul> -->
-        <!-- </li> -->
-      </ul>
-      <!-- <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form> -->
-    </div>
-  </div>
-</nav>
+  <nav class="bg-dark py-2">
+    <ul class="footer-links d-flex gap-2 justify-content-center">
+      <li class="list-unstyled">
+        <router-link :to="{ name: 'home' }">
+          <a class="nav-link active" aria-current="page">Home</a>
+        </router-link>
+      </li>
+
+      <li class="list-unstyled">
+        <router-link :to="{ name: 'about' }">
+          <a class="nav-link active" aria-current="page">About</a>
+        </router-link>
+      </li>
+
+      <li class="list-unstyled">
+        <router-link :to="{ name: 'drinks' }">
+          <a class="nav-link active" aria-current="page">Drinks</a>
+        </router-link>
+      </li>
+
+      <li class="list-unstyled">
+        <!-- <router-link :to="{ name: 'contacts' }">
+          <a class="nav-link active" aria-current="page">Contacts</a>
+        </router-link> -->
+      </li>
+    </ul>
+  </nav>
 </template>
 
+<style lang="scss" scoped>
+  @import url('https://fonts.googleapis.com/css?family=Oswald:500');
 
+  nav {
+    width: 100%;
+    position: fixed;
+    top:50px;
+    text-align:center;
+  }
+  
+  nav a {
+    font-weight:500;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:#ffffff;
+    margin:0 15px;
+    font-size:16px;
+    letter-spacing:1px;
+    position:relative;
+    display:inline-block;
+  }
+  
+  nav a:before {
+  content:'';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background:#16151b;
+    top:47%;
+    animation:out 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+  }
+  
+  nav a:hover:before {
+    animation:in 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+  }
+  
+  @keyframes in {
+    0% {
+      width: 0;
+      left:0;
+      right:auto;
+    }
+    100%{
+      left:0;
+      right:auto;
+      width: 100%;
+    }
+  }
+  
+  @keyframes out{
+    0%{
+      width:100%;
+      left: auto;
+      right: 0;
+    }
+    100%{
+      width: 0;
+      left: auto;
+      right: 0;
+    }
+  }
+  
+  @keyframes show{
+    0%{
+      opacity:0;
+      transform:translateY(-10px);
+    }
+    100%{
+      opacity:1;
+      transform:translateY(0);
+    }
+  }
 
-<style>
-
+  @for $i from 1 through 5 {
+    nav a:nth-child(#{$i}){
+      animation:show .2s #{$i*0.1+1}s ease 1 both;
+    }
+  }
 </style>
