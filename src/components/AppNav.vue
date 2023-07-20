@@ -24,9 +24,9 @@
       </li>
 
       <li class="list-unstyled">
-        <!-- <router-link :to="{ name: 'contacts' }">
+        <router-link :to="{ name: 'contacts' }">
           <a class="nav-link active" aria-current="page">Contacts</a>
-        </router-link> -->
+        </router-link>
       </li>
     </ul>
   </nav>

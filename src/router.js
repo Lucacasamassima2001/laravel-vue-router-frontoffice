@@ -3,6 +3,7 @@ import AppHome from './pages/AppHome.vue';
 import AppAbout from './pages/AppAbout.vue';
 import AppDrinks from './pages/AppDrinks.vue';
 import AppShow from './pages/AppShow.vue';
+import AppContacts from './pages/AppContacts.vue';
 
 
 
@@ -33,11 +34,11 @@ const router = createRouter({
 			name: 'drinks.show',
 			component: AppShow,
 		},
-		// {
-		// 	path: '/contacts',
-		// 	name: 'contacts',
-		// 	component: Contacts,
-		// },
+		{
+			path: '/contacts',
+			name: 'contacts',
+			component: AppContacts,
+		},
 	],
 });
 
