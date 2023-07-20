@@ -134,11 +134,13 @@ a {
 
 /* 	Product Name */
 #container .product-details h1 {
-  font-family: "Old Standard TT", serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   display: inline-block;
   position: relative;
   font-size: 34px;
-  color: #670665;
+  font-weight: 700;
+  color: rgb(135, 39, 213);
 }
 
 #container .product-details h1:before {
