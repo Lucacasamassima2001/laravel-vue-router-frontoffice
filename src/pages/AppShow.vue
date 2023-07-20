@@ -35,7 +35,12 @@ export default {
       .get("http://localhost:8000/api/drinks/" + this.$route.params.id)
       .then((response) => {
         if (response.data.success) {
-          this.drink = response.data.results;
+          const drinkData = response.data.results;
+          this.drink = {
+            ...drinkData,
+            strInstructionsIT:
+              drinkData.strInstructionsIT || drinkData.strInstructions,
+          };
         }
       });
   },
