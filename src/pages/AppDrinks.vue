@@ -73,12 +73,21 @@ export default {
     <h1 class="text-center mt-3">I Nostri Cocktails</h1>
     <div v-if="!loader" class="row row-cols-3 g-5 my-5">
       <div v-for="drink in drinks" :key="drink.id" class="col">
-        <div class="drink_card">
-          <!-- <p class="heading">Popular this month</p>
+        <router-link
+          class="text-decoration-none"
+          :to="{ name: 'drinks.show', params: { id: drink.id } }"
+        >
+          <div class="drink_card">
+            <!-- <p class="heading">Popular this month</p>
           <p>Powered By</p> -->
-          <img class="h-100" :src="drink.strDrinkThumb" :alt="drink.strDrink" />
-          <p>{{ drink.strDrink }}</p>
-        </div>
+            <img
+              class="h-100"
+              :src="drink.strDrinkThumb"
+              :alt="drink.strDrink"
+            />
+            <p>{{ drink.strDrink }}</p>
+          </div>
+        </router-link>
       </div>
     </div>
     <div v-else>
@@ -132,13 +141,16 @@ $quaternary-color: #fc00ff;
 $quinary-color: #00dbde;
 .container {
   margin-top: 8rem;
+  h1 {
+    color: $primary-color;
+  }
   .row {
     margin-left: 9%;
   }
-}
-
-h1 {
-  color: $primary-color;
+  nav {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .drink_card {
