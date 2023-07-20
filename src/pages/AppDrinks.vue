@@ -69,7 +69,6 @@ export default {
 </script>
 
 <template>
-
   <div class="container">
     <h1 class="text-center mt-3">I Nostri Cocktails</h1>
     <div v-if="!loader" class="row row-cols-3 g-5 my-5">
@@ -131,6 +130,9 @@ $secondary-color: #e81cff;
 $tertiary-color: #40c9ff;
 $quaternary-color: #fc00ff;
 $quinary-color: #00dbde;
+.container {
+  margin-top: 8rem;
+}
 
 h1 {
   color: $primary-color;
