@@ -1,20 +1,21 @@
-
 <script>
-import AppNav from './AppNav.vue';
-export default {
+  import AppNav from './AppNav.vue';
+  export default {
     components:{
-        AppNav,
+      AppNav,
     }
-}
+  }
 </script>
 
-
 <template>
-  <h1>sono l'header</h1>
-  <AppNav />
+  <header class="bg-dark fixed-top">
+    <h1 class="text-center text-light py-1">MixTales</h1>
+    <AppNav />
+  </header>
 </template>
 
-
-<style>
-
+<style lang="scss" scoped>
+  header {
+    height: 5rem;
+  }
 </style>
