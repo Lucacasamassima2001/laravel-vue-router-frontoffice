@@ -26,23 +26,19 @@ export default {
       <h1>Titolo Cocktail</h1>
 
       <!-- The most important information about the product -->
-      <p class="information">Descrizione del Cocktail</p>
+      <p class="information">
+        In uno shaker riempito a metà con cubetti di ghiaccio, unisci il gin, il
+        succo di limone e lo zucchero.Mescolate e guarnite con la ciliegia e la
+        fetta d'arancia.Filtrare in un bicchiere collins pieno di cubetti di
+        ghiaccio.Aggiungi la soda club.Agitare bene.
+      </p>
 
-      <!-- 		Control -->
-      <div class="control">
-        <!-- Start Button buying -->
-        <button class="btn">
-          <!-- 		the Price -->
-          <span class="price">49 $</span>
-          <!-- 		shopping cart icon-->
-          <span class="shopping-cart"
-            ><i class="fa fa-shopping-cart" aria-hidden="true"></i
-          ></span>
-          <!-- 		Buy Now / ADD to Cart-->
-          <span class="buy">Buy Now</span>
-        </button>
-        <!-- End Button buying -->
-      </div>
+      <button>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span> Torna alla lista dei Drinks
+      </button>
     </div>
 
     <!-- 	End	Product details   -->
@@ -57,14 +53,19 @@ export default {
 
       <!-- 	product Information-->
       <div class="info">
-        <h2>Informazioni sul Drink</h2>
+        <h2 class="my-4">Informazioni sul Drink</h2>
         <ul>
-          <li><strong>Sun Needs: </strong>Full Sun</li>
-          <li><strong>Soil Needs: </strong>Damp</li>
-          <li><strong>Zones: </strong>9 - 11</li>
-          <li><strong>Height: </strong>2 - 3 feet</li>
-          <li><strong>Blooms in: </strong></li>
-          <li><strong>Features: </strong>Tolerates heat</li>
+          <li><strong>Categoria: </strong>Cocktail</li>
+          <li><strong>Tipo: </strong>Damp</li>
+          <li>
+            <strong
+              ><font-awesome-icon :icon="['fas', 'martini-glass']" /> Bicchiere
+              da usare: </strong
+            >Collins glass
+          </li>
+          <li><strong>Ingredienti: </strong>2 - 3 feet</li>
+          <li><strong>Dosi: </strong> 5kg di zucchero</li>
+          <li><strong>Creato da: </strong>Creatore del drink</li>
         </ul>
       </div>
     </div>
@@ -78,13 +79,13 @@ export default {
 
 #container {
   box-shadow: 0 15px 30px 1px rgba(128, 128, 128, 0.31);
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(11, 9, 9, 0.9);
   text-align: center;
   border-radius: 5px;
   overflow: hidden;
-  margin: 5em auto;
-  height: 350px;
-  width: 700px;
+  margin: 2em auto;
+  height: 500px;
+  width: 1000px;
 }
 
 /* 	Product details  */
@@ -104,8 +105,7 @@ export default {
   display: inline-block;
   position: relative;
   font-size: 34px;
-  color: #344055;
-  margin: 0;
+  color: #670665;
 }
 
 #container .product-details h1:before {
@@ -116,7 +116,7 @@ export default {
   transform: translate(25px, -15px);
   font-family: "Farsan", cursive;
   display: inline-block;
-  background: orange;
+  background: rgb(135, 39, 213);
   border-radius: 5px;
   font-size: 14px;
   padding: 5px;
@@ -134,92 +134,12 @@ export default {
   }
 }
 
-/*Product Rating  */
-.hint-star {
-  display: inline-block;
-  margin-left: 0.5em;
-  color: gold;
-  width: 50%;
-}
-
 /* The most important information about the product */
 #container .product-details > p {
   font-family: "Farsan", cursive;
   text-align: center;
   font-size: 20px;
-  color: #7d7d7d;
-}
-
-/* control */
-
-.control {
-  position: absolute;
-  bottom: 20%;
-  left: 22.8%;
-}
-/* the Button */
-.btn {
-  transform: translateY(0px);
-  transition: 0.3s linear;
-  background: #49c608;
-  border-radius: 5px;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  outline: none;
-  border: none;
-  color: #eee;
-  padding: 0;
-  margin: 0;
-}
-
-.btn:hover {
-  transform: translateY(-4px);
-}
-
-.btn span {
-  font-family: "Farsan", cursive;
-  transition: transform 0.3s;
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 1.2em;
-  margin: 0;
-}
-/* shopping cart icon */
-.btn .price,
-.shopping-cart {
-  background: #333;
-  border: 0;
-  margin: 0;
-}
-
-.btn .price {
-  transform: translateX(-10%);
-  padding-right: 15px;
-}
-
-/* the Icon */
-.btn .shopping-cart {
-  transform: translateX(-100%);
-  position: absolute;
-  background: #333;
-  z-index: 1;
-  left: 0;
-  top: 0;
-}
-
-/* buy */
-.btn .buy {
-  z-index: 3;
-  font-weight: bolder;
-}
-
-.btn:hover .price {
-  transform: translateX(-110%);
-}
-
-.btn:hover .shopping-cart {
-  transform: translateX(0%);
+  color: white;
 }
 
 /* product image  */
@@ -254,6 +174,7 @@ export default {
   width: 100%;
   left: 0;
   top: 0;
+  padding: 20px;
 }
 
 .info h2 {
@@ -275,5 +196,107 @@ export default {
 }
 .product-image:hover img {
   transform: scale(1.2, 1.2);
+}
+
+// BOTTONE PER TORNARE ALLA LISTA DEI DRINKS
+
+button {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  padding: 1em 1.8em;
+  outline: none;
+  border: 1px solid #303030;
+  background: #212121;
+  color: #ae00ff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 15px;
+  overflow: hidden;
+  transition: 0.2s;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  box-shadow: 0 0 10px #ae00ff, 0 0 25px #001eff, 0 0 50px #ae00ff;
+  transition-delay: 0.6s;
+}
+
+button span {
+  position: absolute;
+}
+
+button span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ae00ff);
+}
+
+button:hover span:nth-child(1) {
+  left: 100%;
+  transition: 0.7s;
+}
+
+button span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #001eff);
+}
+
+button:hover span:nth-child(3) {
+  right: 100%;
+  transition: 0.7s;
+  transition-delay: 0.35s;
+}
+
+button span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #ae00ff);
+}
+
+button:hover span:nth-child(2) {
+  top: 100%;
+  transition: 0.7s;
+  transition-delay: 0.17s;
+}
+
+button span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #001eff);
+}
+
+button:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 0.7s;
+  transition-delay: 0.52s;
+}
+
+button:active {
+  background: #ae00af;
+  background: linear-gradient(to top right, #ae00af, #001eff);
+  color: #bfbfbf;
+  box-shadow: 0 0 8px #ae00ff, 0 0 8px #001eff, 0 0 8px #ae00ff;
+  transition: 0.1s;
+}
+
+button:active
+  span:nth-child(1)
+  span:nth-child(2)
+  span:nth-child(2)
+  span:nth-child(2) {
+  transition: none;
+  transition-delay: none;
 }
 </style>
