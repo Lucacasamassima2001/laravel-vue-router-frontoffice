@@ -132,6 +132,9 @@ $quaternary-color: #fc00ff;
 $quinary-color: #00dbde;
 .container {
   margin-top: 8rem;
+  .row {
+    margin-left: 9%;
+  }
 }
 
 h1 {
@@ -251,6 +254,7 @@ ul.pagination {
       &:hover {
         background-color: gray;
         color: $secondary-color;
+        border-color: $secondary-color;
       }
     }
 
