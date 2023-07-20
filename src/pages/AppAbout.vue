@@ -7,7 +7,7 @@ export default {
 
 
 <template>
-  <div class="container-big about py-4">
+  <div class="container-big about py-5">
   
   <h1 style="font-style: italic; font-size: 4em;" class="text-center py-3">Chi siamo...</h1>
 
@@ -103,6 +103,7 @@ export default {
 
 
 .about{
+  margin-top: 5rem;
   background-color: black;
   color: white;
 }

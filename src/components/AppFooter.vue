@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <footer class="footer-distributed fixed-bottom container-fluid">
+  <footer class="footer-distributed container-fluid">
     <div class="footer-right">
 
       <a href="#"><i class="fa-brands fa-facebook"></i></a>
