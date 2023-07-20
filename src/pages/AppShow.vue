@@ -55,7 +55,7 @@ export default {
       <h1>{{ drink.strDrink }}</h1>
 
       <!-- The most important information about the product -->
-      <p class="information">
+      <p class="information my-5">
         {{ drink.strInstructionsIT }}
       </p>
 
@@ -236,7 +236,7 @@ a {
 button {
   position: absolute;
   bottom: 10%;
-  left: 10%;
+  left: 22%;
   padding: 1em 1.8em;
   outline: none;
   border: 1px solid #303030;
