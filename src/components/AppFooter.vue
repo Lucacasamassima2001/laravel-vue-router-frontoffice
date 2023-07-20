@@ -54,8 +54,8 @@
     box-sizing: border-box;
     width: 100%;
     text-align: left;
-    padding: 45px 50px;
-    height: 10rem;
+    padding: 10px 50px;
+    height: 5rem;
   }
 
   .footer-distributed .footer-left ul {
@@ -97,7 +97,7 @@
 
   .footer-distributed .footer-right {
     float: right;
-    margin-top: 6px;
+    margin-top: 14px;
     max-width: 180px;
   }
 
