@@ -1,6 +1,11 @@
 <script>
 import axios from "axios";
 export default {
+  data() {
+    return {
+      drink: null,
+    };
+  },
   created() {
     // richiesta axios per i dati del post
     axios
@@ -9,10 +14,6 @@ export default {
         if (response.data.success) {
           this.drink = response.data.results;
         }
-        //  else {
-        //   // this.$router.push({ name: "page404" });
-        //   this.is404 = true;
-        // }
       });
   },
 };
@@ -23,7 +24,7 @@ export default {
     <!-- Start	Product details -->
     <div class="product-details">
       <!-- 	Product Name -->
-      <h1>Titolo Cocktail</h1>
+      <h1>{{ drink.strDrink }}</h1>
 
       <!-- The most important information about the product -->
       <p class="information">
@@ -58,9 +59,9 @@ export default {
           <li><strong>Categoria: </strong>Cocktail</li>
           <li><strong>Tipo: </strong>Damp</li>
           <li>
-            <strong
-              ><font-awesome-icon :icon="['fas', 'martini-glass']" /> Bicchiere
-              da usare: </strong
+            <strong>
+              <!-- <font-awesome-icon :icon="['fas', 'martini-glass']" />  -->
+              Bicchiere da usare: </strong
             >Collins glass
           </li>
           <li><strong>Ingredienti: </strong>2 - 3 feet</li>
