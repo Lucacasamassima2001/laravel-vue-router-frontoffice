@@ -157,7 +157,7 @@ h1 {
     inset: 0;
     left: -5px;
     margin: auto;
-    width: 219px;
+    width: 210px;
     height: 292px;
     border-radius: 10px;
     background: linear-gradient(
@@ -243,6 +243,7 @@ h1 {
 // paginator
 
 ul.pagination {
+  --bs-pagination-border-color: black;
   .page-item {
     .page-link {
       color: $secondary-color;
