@@ -91,7 +91,9 @@ export default {
 </script>
 
 <template>
-	<h1>MixTales</h1>
+	<div class="container py-5 my-5">
+
+	<h1 class="py-3">MixTales</h1>
 	<div class="wrapper">
 		<!-- Description Text -->
 		<div class="text-container">
@@ -138,8 +140,8 @@ export default {
 				@mouseover="stopAutoScroll"
 				@mouseleave="startAutoScroll"
 				class="carousel-arrows">
-				<p class="fa-chevron-left" @click="prevImage">S</p>
-				<p class="fa-chevron-right" @click="nextImage">S</p>
+				<p class="fa-solid fa-chevron-left" @click="prevImage"></p>
+				<p class="fa-solid fa-chevron-right" @click="nextImage"></p>
 				<!-- <font-awesome-icon icon="fa-solid fa-chevron-left" @click="prevImage" /> -->
 				<!-- <font-awesome-icon
 					icon="fa-solid fa-chevron-right"
@@ -152,6 +154,9 @@ export default {
 			>Inizia il racconto</router-link
 		>
 	</div>
+
+</div>
+
 </template>
 
 <style lang="scss" scoped>

@@ -119,6 +119,7 @@ a {
   margin: 2em auto;
   height: 500px;
   width: 1200px;
+  margin-top: 10rem;
 }
 
 /* 	Product details  */
