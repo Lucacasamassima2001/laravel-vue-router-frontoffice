@@ -6,6 +6,29 @@ export default {
       drink: null,
     };
   },
+  methods: {
+    formatIngredients(drink) {
+      const ingredients = [];
+      for (let i = 1; i <= 8; i++) {
+        const ingredient = drink["strIngredient" + i];
+        if (ingredient) {
+          ingredients.push(ingredient);
+        }
+      }
+      return ingredients.join(", ");
+    },
+
+    formatMeasures(drink) {
+      const measures = [];
+      for (let i = 1; i <= 8; i++) {
+        const measure = drink["strMeasure" + i];
+        if (measure) {
+          measures.push(measure);
+        }
+      }
+      return measures.join(", ");
+    },
+  },
   created() {
     // richiesta axios per i dati del post
     axios
@@ -28,17 +51,17 @@ export default {
 
       <!-- The most important information about the product -->
       <p class="information">
-        In uno shaker riempito a metà con cubetti di ghiaccio, unisci il gin, il
-        succo di limone e lo zucchero.Mescolate e guarnite con la ciliegia e la
-        fetta d'arancia.Filtrare in un bicchiere collins pieno di cubetti di
-        ghiaccio.Aggiungi la soda club.Agitare bene.
+        {{ drink.strInstructionsIT }}
       </p>
 
       <button>
         <span></span>
         <span></span>
         <span></span>
-        <span></span> Torna alla lista dei Drinks
+        <span></span>
+        <router-link :to="{ name: 'drinks' }"
+          >Torna alla lista dei Drinks</router-link
+        >
       </button>
     </div>
 
@@ -47,26 +70,25 @@ export default {
     <!-- 	Start product image & Information -->
 
     <div class="product-image">
-      <img
-        src="https://www.thecocktaildb.com/images/media/drink/stsuqq1441207660.jpg"
-        alt="Omar Dsoky"
-      />
+      <img :src="drink.strDrinkThumb" :alt="drink.strDrink" />
 
       <!-- 	product Information-->
       <div class="info">
         <h2 class="my-4">Informazioni sul Drink</h2>
         <ul>
-          <li><strong>Categoria: </strong>Cocktail</li>
-          <li><strong>Tipo: </strong>Damp</li>
+          <li><strong>Categoria: </strong>{{ drink.strCategory }}</li>
+          <li><strong>Tipo: </strong>{{ drink.strAlcoholic }}</li>
           <li>
             <strong>
               <!-- <font-awesome-icon :icon="['fas', 'martini-glass']" />  -->
               Bicchiere da usare: </strong
-            >Collins glass
+            >{{ drink.strGlass }}
           </li>
-          <li><strong>Ingredienti: </strong>2 - 3 feet</li>
-          <li><strong>Dosi: </strong> 5kg di zucchero</li>
-          <li><strong>Creato da: </strong>Creatore del drink</li>
+          <li><strong>Ingredienti: </strong>{{ formatIngredients(drink) }}</li>
+          <li><strong>Dosi: </strong>{{ formatMeasures(drink) }}</li>
+          <li v-if="drink.strTags">
+            <strong>Tags: </strong>{{ drink.strTags }}
+          </li>
         </ul>
       </div>
     </div>
@@ -78,6 +100,11 @@ export default {
 /* fonts  */
 @import url("https://fonts.googleapis.com/css?family=Abel|Aguafina+Script|Artifika|Athiti|Condiment|Dosis|Droid+Serif|Farsan|Gurajada|Josefin+Sans|Lato|Lora|Merriweather|Noto+Serif|Open+Sans+Condensed:300|Playfair+Display|Rasa|Sahitya|Share+Tech|Text+Me+One|Titillium+Web");
 
+a {
+  text-decoration: none;
+  color: #ae00af;
+}
+
 #container {
   box-shadow: 0 15px 30px 1px rgba(128, 128, 128, 0.31);
   background: rgba(11, 9, 9, 0.9);
@@ -86,7 +113,7 @@ export default {
   overflow: hidden;
   margin: 2em auto;
   height: 500px;
-  width: 1000px;
+  width: 1200px;
 }
 
 /* 	Product details  */
@@ -175,7 +202,7 @@ export default {
   width: 100%;
   left: 0;
   top: 0;
-  padding: 20px;
+  padding: 25px;
 }
 
 .info h2 {
