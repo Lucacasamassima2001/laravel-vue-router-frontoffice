@@ -6,8 +6,8 @@ export default {
       drinks: [],
       currentPage: 1,
       nPages: 0,
-      firstPage: false,
-      lastPage: false,
+      // firstPage: false,
+      // lastPage: false,
       loader: true,
     };
   },
@@ -28,34 +28,31 @@ export default {
     },
     changePage(page) {
       this.currentPage = page;
-      // this.getProjects();
-      if (this.currentPage <= 1) {
-        this.firstPage = !this.firstPage;
-      } else {
-        this.firstPage = false;
-      }
-      if (this.currentPage >= this.nPages) {
-        this.lastPage = !this.lastPage;
-      } else {
-        this.lastPage = false;
-      }
+      // if (this.currentPage <= 1) {
+      //   this.firstPage = !this.firstPage;
+      // } else {
+      //   this.firstPage = false;
+      // }
+      // if (this.currentPage >= this.nPages) {
+      //   this.lastPage = !this.lastPage;
+      // } else {
+      //   this.lastPage = false;
+      // }
     },
-    nextPage() {
-      this.currentPage++;
-      // this.getProjects();
-      if (this.currentPage >= this.nPages) {
-        this.lastPage = true;
-      }
-      this.firstPage = false;
-    },
-    previousPage() {
-      this.currentPage--;
-      // this.getProjects();
-      if (this.currentPage <= 1) {
-        this.firstPage = true;
-      }
-      this.lastPage = false;
-    },
+    // nextPage() {
+    //   this.currentPage++;
+    //   if (this.currentPage >= this.nPages) {
+    //     this.lastPage = true;
+    //   }
+    //   this.firstPage = false;
+    // },
+    // previousPage() {
+    //   this.currentPage--;
+    //   if (this.currentPage <= 1) {
+    //     this.firstPage = true;
+    //   }
+    //   this.lastPage = false;
+    // },
   },
   created() {
     this.getDrinks();
@@ -69,45 +66,46 @@ export default {
 </script>
 
 <template>
-  <img
-    class="bg_bar z-1"
-    src="../../public/bg-drink-index.png"
-    alt="bg-index"
-  />
-  <img
-    class="bg_drink z-1"
-    src="../../public/bg-drink-index.png"
-    alt="bg-index-drink"
-  />
-  <div class="container">
-    <h1 class="text-center mt-3">I Nostri Cocktails</h1>
-    <div v-if="!loader" class="row row-cols-3 g-5 my-5">
-      <div v-for="drink in drinks" :key="drink.id" class="col z-3">
-        <router-link
-          class="text-decoration-none"
-          :to="{ name: 'drinks.show', params: { id: drink.id } }"
-        >
-          <div class="drink_card">
-            <!-- <p class="heading">Popular this month</p>
+  <main>
+    <img
+      class="bg_bar z-1"
+      src="../../public/bg-drink-index.png"
+      alt="bg-index"
+    />
+    <img
+      class="bg_drink z-1"
+      src="../../public/bg-drink-index.png"
+      alt="bg-index-drink"
+    />
+    <div class="container">
+      <h1 class="text-center mt-3">I Nostri Cocktails</h1>
+      <div v-if="!loader" class="row row-cols-3 g-5 my-5">
+        <div v-for="drink in drinks" :key="drink.id" class="col z-3">
+          <router-link
+            class="text-decoration-none"
+            :to="{ name: 'drinks.show', params: { id: drink.id } }"
+          >
+            <div class="drink_card">
+              <!-- <p class="heading">Popular this month</p>
           <p>Powered By</p> -->
-            <img
-              class="h-100"
-              :src="drink.strDrinkThumb"
-              :alt="drink.strDrink"
-            />
-            <p>{{ drink.strDrink }}</p>
-          </div>
-        </router-link>
+              <img
+                class="h-100"
+                :src="drink.strDrinkThumb"
+                :alt="drink.strDrink"
+              />
+              <p>{{ drink.strDrink }}</p>
+            </div>
+          </router-link>
+        </div>
       </div>
-    </div>
-    <div v-else>
-      <div class="loader">
-        <div class="loader_cube loader_cube--color"></div>
-        <div class="loader_cube loader_cube--glowing"></div>
+      <div v-else>
+        <div class="loader">
+          <div class="loader_cube loader_cube--color"></div>
+          <div class="loader_cube loader_cube--glowing"></div>
+        </div>
       </div>
-    </div>
-    <nav>
-      <!-- <ul class="pagination">
+      <nav>
+        <!-- <ul class="pagination">
         <li class="page-item">
           <button
             class="page-link bg-dark"
@@ -139,21 +137,22 @@ export default {
           </button>
         </li>
       </ul> -->
-      <div class="pagination p6">
-        <ul>
-          <a
-            href="#"
-            v-for="page in nPages"
-            :key="page"
-            class="page-item"
-            :class="{ is_active: page == currentPage }"
-            @click="changePage(page)"
-            ><li></li
-          ></a>
-        </ul>
-      </div>
-    </nav>
-  </div>
+        <div class="pagination p6">
+          <ul>
+            <a
+              href="#"
+              v-for="page in nPages"
+              :key="page"
+              class="page-item"
+              :class="{ is_active: page == currentPage }"
+              @click="changePage(page)"
+              ><li></li
+            ></a>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </main>
 </template>
 
 <style lang="scss" scoped>
@@ -166,20 +165,20 @@ $quinary-color: #00dbde;
 .bg_bar {
   position: absolute;
   // height: rem;
-  bottom: 3rem;
-  left: -7rem;
+  bottom: 8rem;
+  left: 0;
   transform: rotate(90deg);
 }
 
 .bg_drink {
   position: absolute;
-  right: -7rem;
+  right: 0;
   bottom: 20rem;
   transform: rotate(270deg);
 }
 .container {
-  margin-top: 8rem;
-  // background-image: url(../../public/bg-index.jpg);
+  margin-top: 5rem;
+  margin-bottom: 5rem;
   h1 {
     color: $primary-color;
   }

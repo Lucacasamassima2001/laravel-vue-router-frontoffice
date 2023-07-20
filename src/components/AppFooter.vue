@@ -3,7 +3,7 @@ export default {};
 </script>
 
 <template>
-  <footer class="footer-distributed container-fluid">
+  <footer class="footer-distributed container-fluid fixed-bottom">
     <div class="footer-right">
       <a href="#"><i class="fa-brands fa-facebook"></i></a>
       <a href="#"><i class="fa-brands fa-twitter"></i></a>
