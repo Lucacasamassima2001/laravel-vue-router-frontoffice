@@ -1,16 +1,21 @@
-
 <script>
 export default {
-
-}
+  data() {
+    return {
+      drinks: [],
+    };
+  },
+  methods: {},
+};
 </script>
 
-
 <template>
-  <h1>show</h1>
+  <div class="container">
+    <h1>I Nostri Cocktails</h1>
+    <div class="row">
+      <div class="content"></div>
+    </div>
+  </div>
 </template>
 
-
-<style>
-
-</style>
+<style lang="scss" scoped></style>
