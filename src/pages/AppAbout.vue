@@ -171,7 +171,6 @@ $mainColor: #55328b;
   height: 600px;
   background-image: url(../../public/drink-assapora.jpg);
   background-position-y: -300px;
-  background-position-x: -250px;
   border-top: 5px solid rgba(151, 65, 252, 0.2);
   border-bottom: 5px solid rgba(151, 65, 252, 0.2);
   background-repeat: no-repeat;
