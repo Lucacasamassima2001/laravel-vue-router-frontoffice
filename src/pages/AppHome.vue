@@ -103,7 +103,7 @@ export default {
 </script>
 
 <template>
-	<div class="container py-5 my-5">
+	<div class="container home py-5 my-5">
 		<h1 class="py-3">Welcome to MixTales!</h1>
 		<div class="wrapper">
 			<!-- Description Text -->
@@ -161,16 +161,14 @@ export default {
         </div>
       </div>
     </div>
- 
-    <button>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <router-link class="text-decoration-none" :to="{ name: 'about' }"
-        >Inizia il racconto</router-link
-      >
-    </button>
+	<div class="container d-flex justify-content-center py-5">
+		<button>
+      	<router-link class="text-decoration-none" :to="{ name: 'about' }"
+      	>Inizia il racconto</router-link
+     	 >
+    	</button>
+	</div>
+    
   </div>
 
 </template>
@@ -178,6 +176,9 @@ export default {
 <style lang="scss" scoped>
 $mainColor: #55328b;
 $textColor: #9685c2;
+
+
+
 
 *,
 *::after,
@@ -194,8 +195,6 @@ h1 {
 }
 
 .wrapper {
-	height: calc(100vh - 25rem);
-	width: 90%;
 	margin: 0 auto;
 	display: grid;
 	align-content: center;
@@ -345,9 +344,6 @@ h1 {
 // BOTTONE PER TORNARE ALLA LISTA DEI DRINKS
 
 button {
-  position: absolute;
-  bottom: 10%;
-  left: 22%;
   padding: 1em 1.8em;
   outline: none;
   border: 1px solid #303030;
@@ -361,7 +357,6 @@ button {
   border-radius: 20px;
   cursor: pointer;
   font-weight: bold;
-  margin-left: 26rem;
 }
 
 button:hover {
