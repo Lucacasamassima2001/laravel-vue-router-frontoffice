@@ -95,7 +95,6 @@ li {
   display: inline-block;
   width: 35px;
   height: 35px;
-  background-color: #33383b;
   border-radius: 2px;
   font-size: 20px;
   color: #ffffff;

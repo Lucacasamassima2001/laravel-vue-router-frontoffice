@@ -3,7 +3,7 @@ export default {};
 </script>
 
 <template>
-  <div class="container-fluid about py-5">
+  <div class="about py-5">
     <h1 style="font-style: italic; font-size: 4em" class="text-center py-3">
       Chi siamo...
     </h1>
@@ -21,7 +21,7 @@ export default {};
 
     <div class="container py-5">
       <h2>La nostra filosofia...</h2>
-      <div class="container d-flex">
+      <div class="d-flex">
         <p class="fs-4">
           Al centro di tutto ciò che facciamo, c'è l'amore per gli ingredienti
           di alta qualità e l'attenzione per i dettagli. <br />
@@ -43,19 +43,17 @@ export default {};
     </div>
 
     <div class="container menu py-5">
-      <div class="container">
-        <div class="text-center">
-          <h2>Il nostro menu</h2>
-          <i class="fa-solid fa-quote-left"></i>
-          <p class="fs-4">
-            Il nostro menu di cocktail è una fusione di classici intramontabili
-            e creazioni innovative. Dai mojito rinfrescanti e dai negroni
-            avvolgenti, fino alle nostre invenzioni esclusive, ogni drink è un
-            viaggio sensoriale che vi porterà in luoghi lontani e spazierà tra
-            le emozioni.
-          </p>
-          <i class="fa-solid fa-quote-right"></i>
-        </div>
+      <div class="text-center">
+        <h2>Il nostro menu</h2>
+        <i class="fa-solid fa-quote-left"></i>
+        <p class="fs-4">
+          Il nostro menu di cocktail è una fusione di classici intramontabili
+          e creazioni innovative. Dai mojito rinfrescanti e dai negroni
+          avvolgenti, fino alle nostre invenzioni esclusive, ogni drink è un
+          viaggio sensoriale che vi porterà in luoghi lontani e spazierà tra
+          le emozioni.
+        </p>
+        <i class="fa-solid fa-quote-right"></i>
       </div>
     </div>
     <div class="container py-3">
@@ -71,21 +69,19 @@ export default {};
     </div>
 
     <div class="container menu py-5">
-      <div class="container">
-        <div class="text-center">
-          <h2>Esperienza personalizzata</h2>
-          <i class="fa-solid fa-quote-left"></i>
-          <p class="fs-4">
-            Crediamo che ogni cliente sia unico e meriti un'esperienza
-            personalizzata. I nostri mixologist sono pronti ad ascoltare le
-            vostre preferenze e consigliarvi i cocktail che meglio si adattano
-            ai vostri gusti e alle vostre occasioni speciali.
-          </p>
-          <i class="fa-solid fa-quote-right"></i>
-        </div>
+      <div class="text-center">
+        <h2>Esperienza personalizzata</h2>
+        <i class="fa-solid fa-quote-left"></i>
+        <p class="fs-4">
+          Crediamo che ogni cliente sia unico e meriti un'esperienza
+          personalizzata. I nostri mixologist sono pronti ad ascoltare le
+          vostre preferenze e consigliarvi i cocktail che meglio si adattano
+          ai vostri gusti e alle vostre occasioni speciali.
+        </p>
+        <i class="fa-solid fa-quote-right"></i>
       </div>
     </div>
-    <div class="container py-5 d-flex gap-5 justify-content-center">
+    <div class="py-5 d-flex gap-5 justify-content-center">
       <img
         style="
           width: 500px;
@@ -106,9 +102,9 @@ export default {};
       />
     </div>
 
-    <div class="container-big py-3 my-3 assapora">
-      <div class="container py-3">
-        <div class="text-center">
+    <div class="py-3 my-3 assapora">
+      <div class="py-3">
+        <div class="container text-center">
           <h2>Assaporate il piacere</h2>
           <i class="fa-solid fa-quote-left"></i>
           <p class="fs-4">
@@ -136,7 +132,7 @@ export default {};
       </div>
     </div>
     
-    <div class="container py-5 d-flex justify-content-center">
+    <div class="py-5 d-flex justify-content-center">
       <button>
       <router-link class="text-decoration-none" :to="{ name: 'drinks' }"
         >I nostri cocktails</router-link
