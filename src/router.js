@@ -25,6 +25,11 @@ const router = createRouter({
 			component: AppAbout,
 		},
 		{
+			path: '/contact',
+			name: 'contact',
+			component: AppContacts,
+		},
+		{
 			path: '/drinks',
 			name: 'drinks',
 			component: AppDrinks,
