@@ -77,8 +77,11 @@ export default {
       src="../../public/bg-drink-index.png"
       alt="bg-index-drink"
     />
+    
     <div class="container">
+      
       <h1 class="text-center mt-3">I Nostri Cocktails</h1>
+      
       <div v-if="!loader" class="row row-cols-3 g-5 my-5">
         <div v-for="drink in drinks" :key="drink.id" class="col z-3">
           <router-link
@@ -86,8 +89,6 @@ export default {
             :to="{ name: 'drinks.show', params: { id: drink.id } }"
           >
             <div class="drink_card">
-              <!-- <p class="heading">Popular this month</p>
-          <p>Powered By</p> -->
               <img
                 class="h-100"
                 :src="drink.strDrinkThumb"
@@ -104,39 +105,8 @@ export default {
           <div class="loader_cube loader_cube--glowing"></div>
         </div>
       </div>
+      
       <nav>
-        <!-- <ul class="pagination">
-        <li class="page-item">
-          <button
-            class="page-link bg-dark"
-            :class="{ disabled: firstPage }"
-            @click="previousPage()"
-          >
-            Previous
-          </button>
-        </li>
-
-        <li
-          v-for="page in nPages"
-          :key="page"
-          class="page-item"
-          :class="{ active: page == currentPage }"
-        >
-          <button class="page-link bg-dark" @click="changePage(page)">
-            {{ page }}
-          </button>
-        </li>
-
-        <li class="page-item">
-          <button
-            class="page-link bg-dark"
-            :class="{ disabled: lastPage }"
-            @click="nextPage()"
-          >
-            Next
-          </button>
-        </li>
-      </ul> -->
         <div class="pagination p6">
           <ul>
             <a
@@ -151,6 +121,7 @@ export default {
           </ul>
         </div>
       </nav>
+
     </div>
   </main>
 </template>

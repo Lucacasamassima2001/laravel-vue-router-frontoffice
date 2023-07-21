@@ -3,7 +3,7 @@ export default {};
 </script>
 
 <template>
-  <nav class="bg-dark py-2 d-flex align-items-center">
+  <nav class="d-flex align-items-center">
     <ul class="footer-links d-flex gap-4 justify-content-center pt-3">
       <li class="list-unstyled">
         <router-link :to="{ name: 'home' }">
@@ -13,7 +13,7 @@ export default {};
 
       <li class="list-unstyled">
         <router-link :to="{ name: 'about' }">
-          <button class="button">ABOUT</button>
+          <button class="button">CHI SIAMO</button>
         </router-link>
       </li>
 
