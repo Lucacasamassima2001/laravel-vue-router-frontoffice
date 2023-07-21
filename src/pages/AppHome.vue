@@ -104,7 +104,7 @@ export default {
 
 <template>
 	<div class="container home py-5 my-5">
-		<h1 class="py-3">Welcome to MixTales!</h1>
+		<h1 class="py-5">Welcome to MixTales!</h1>
 		<div class="wrapper">
 			<!-- Description Text -->
 			<div class="text-container">
