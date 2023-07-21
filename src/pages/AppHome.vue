@@ -92,7 +92,7 @@ export default {
 
 <template>
   <div class="container py-5 my-5">
-    <h1 class="py-3">MixTales</h1>
+    <h1 class="py-3">Welcome to MixTales!</h1>
     <div class="wrapper">
       <!-- Description Text -->
       <div class="text-container">
@@ -128,8 +128,8 @@ export default {
           >
             <div>
               <img :src="getUrl(image)" :alt="image.name" />
-              <p class="under-text name">{{ image.name }}</p>
-              <p class="under-text description">{{ image.description }}</p>
+              <p class="under-text name py-1">{{ image.name }}</p>
+              <p class="under-text description py-2">{{ image.description }}</p>
             </div>
             <div class="image-text">
               <p class="type">Vieni a provarlo!</p>
@@ -142,8 +142,8 @@ export default {
           @mouseleave="startAutoScroll"
           class="carousel-arrows"
         >
-          <p class="fa-solid fa-chevron-left" @click="prevImage"></p>
-          <p class="fa-solid fa-chevron-right" @click="nextImage"></p>
+          <i class="fa-solid fa-chevron-left" @click="prevImage"></i>
+          <i class="fa-solid fa-chevron-right" @click="nextImage"></i>
           <!-- <font-awesome-icon icon="fa-solid fa-chevron-left" @click="prevImage" /> -->
           <!-- <font-awesome-icon
 					icon="fa-solid fa-chevron-right"
@@ -174,7 +174,7 @@ $textColor: #9685c2;
 h1 {
   text-align: center;
   color: $mainColor;
-  font-size: 5rem;
+  font-size: 3rem;
 }
 
 .wrapper {
@@ -234,6 +234,8 @@ h1 {
   font-size: 1rem;
   line-height: 2rem;
   color: $textColor;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 .splide__slide {
@@ -282,7 +284,8 @@ h1 {
     filter: brightness(0.9);
     margin-bottom: 1rem;
     transition: all 300ms;
-
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
     &:hover {
       filter: brightness(0.6);
     }
@@ -301,21 +304,25 @@ h1 {
 .fa-chevron-left {
   line-height: 1rem;
   padding: 2.2rem 1rem;
-  color: white;
+  color: #523464;
   position: absolute;
   left: 0;
-  background-color: #523464;
-  border: 1px solid white;
+  font-size: 3em;
+  &:hover{
+    cursor: pointer;
+  }
 }
 
 .fa-chevron-right {
   line-height: 1rem;
   padding: 2.2rem 1rem;
-  color: white;
+  color: #523464;
   position: absolute;
   right: 0;
-  background-color: #523464;
-  border: 1px solid white;
+  font-size: 3em;
+  &:hover{
+    cursor: pointer;
+  }
 }
 
 .start {
