@@ -6,8 +6,8 @@ export default {
       drinks: [],
       currentPage: 1,
       nPages: 0,
-      firstPage: false,
-      lastPage: false,
+      // firstPage: false,
+      // lastPage: false,
       loader: true,
     };
   },
@@ -28,34 +28,31 @@ export default {
     },
     changePage(page) {
       this.currentPage = page;
-      // this.getProjects();
-      if (this.currentPage <= 1) {
-        this.firstPage = !this.firstPage;
-      } else {
-        this.firstPage = false;
-      }
-      if (this.currentPage >= this.nPages) {
-        this.lastPage = !this.lastPage;
-      } else {
-        this.lastPage = false;
-      }
+      // if (this.currentPage <= 1) {
+      //   this.firstPage = !this.firstPage;
+      // } else {
+      //   this.firstPage = false;
+      // }
+      // if (this.currentPage >= this.nPages) {
+      //   this.lastPage = !this.lastPage;
+      // } else {
+      //   this.lastPage = false;
+      // }
     },
-    nextPage() {
-      this.currentPage++;
-      // this.getProjects();
-      if (this.currentPage >= this.nPages) {
-        this.lastPage = true;
-      }
-      this.firstPage = false;
-    },
-    previousPage() {
-      this.currentPage--;
-      // this.getProjects();
-      if (this.currentPage <= 1) {
-        this.firstPage = true;
-      }
-      this.lastPage = false;
-    },
+    // nextPage() {
+    //   this.currentPage++;
+    //   if (this.currentPage >= this.nPages) {
+    //     this.lastPage = true;
+    //   }
+    //   this.firstPage = false;
+    // },
+    // previousPage() {
+    //   this.currentPage--;
+    //   if (this.currentPage <= 1) {
+    //     this.firstPage = true;
+    //   }
+    //   this.lastPage = false;
+    // },
   },
   created() {
     this.getDrinks();
@@ -69,26 +66,46 @@ export default {
 </script>
 
 <template>
-  <div class="container">
-    <h1 class="text-center mt-3">I Nostri Cocktails</h1>
-    <div v-if="!loader" class="row row-cols-3 g-5 my-5">
-      <div v-for="drink in drinks" :key="drink.id" class="col">
-        <div class="drink_card">
-          <!-- <p class="heading">Popular this month</p>
+  <main>
+    <img
+      class="bg_bar z-1"
+      src="../../public/bg-drink-index.png"
+      alt="bg-index"
+    />
+    <img
+      class="bg_drink z-1"
+      src="../../public/bg-drink-index.png"
+      alt="bg-index-drink"
+    />
+    <div class="container">
+      <h1 class="text-center mt-3">I Nostri Cocktails</h1>
+      <div v-if="!loader" class="row row-cols-3 g-5 my-5">
+        <div v-for="drink in drinks" :key="drink.id" class="col z-3">
+          <router-link
+            class="text-decoration-none"
+            :to="{ name: 'drinks.show', params: { id: drink.id } }"
+          >
+            <div class="drink_card">
+              <!-- <p class="heading">Popular this month</p>
           <p>Powered By</p> -->
-          <img class="h-100" :src="drink.strDrinkThumb" :alt="drink.strDrink" />
-          <p>{{ drink.strDrink }}</p>
+              <img
+                class="h-100"
+                :src="drink.strDrinkThumb"
+                :alt="drink.strDrink"
+              />
+              <p>{{ drink.strDrink }}</p>
+            </div>
+          </router-link>
         </div>
       </div>
-    </div>
-    <div v-else>
-      <div class="loader">
-        <div class="loader_cube loader_cube--color"></div>
-        <div class="loader_cube loader_cube--glowing"></div>
+      <div v-else>
+        <div class="loader">
+          <div class="loader_cube loader_cube--color"></div>
+          <div class="loader_cube loader_cube--glowing"></div>
+        </div>
       </div>
-    </div>
-    <nav>
-      <ul class="pagination">
+      <nav>
+        <!-- <ul class="pagination">
         <li class="page-item">
           <button
             class="page-link bg-dark"
@@ -119,9 +136,23 @@ export default {
             Next
           </button>
         </li>
-      </ul>
-    </nav>
-  </div>
+      </ul> -->
+        <div class="pagination p6">
+          <ul>
+            <a
+              href="#"
+              v-for="page in nPages"
+              :key="page"
+              class="page-item"
+              :class="{ is_active: page == currentPage }"
+              @click="changePage(page)"
+              ><li></li
+            ></a>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </main>
 </template>
 
 <style lang="scss" scoped>
@@ -130,12 +161,34 @@ $secondary-color: #e81cff;
 $tertiary-color: #40c9ff;
 $quaternary-color: #fc00ff;
 $quinary-color: #00dbde;
-.container {
-  margin-top: 8rem;
+
+.bg_bar {
+  position: absolute;
+  // height: rem;
+  bottom: 8rem;
+  left: 0;
+  transform: rotate(90deg);
 }
 
-h1 {
-  color: $primary-color;
+.bg_drink {
+  position: absolute;
+  right: 0;
+  bottom: 20rem;
+  transform: rotate(270deg);
+}
+.container {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  h1 {
+    color: $primary-color;
+  }
+  .row {
+    margin-left: 9%;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .drink_card {
@@ -157,7 +210,7 @@ h1 {
     inset: 0;
     left: -5px;
     margin: auto;
-    width: 219px;
+    width: 210px;
     height: 292px;
     border-radius: 10px;
     background: linear-gradient(
@@ -239,32 +292,64 @@ h1 {
     }
   }
 }
-
-// paginator
-
-ul.pagination {
-  .page-item {
-    .page-link {
-      color: $secondary-color;
-
-      &:hover {
-        background-color: gray;
-        color: $secondary-color;
-      }
-    }
-
-    &.active {
-      .page-link {
-        background-color: gray;
-        border-color: $secondary-color;
-      }
-    }
-  }
-}
-
 @keyframes loadtwo {
   50% {
     transform: rotate(-80deg);
   }
 }
+
+// paginator
+
+.pagination {
+  padding: 30px 0;
+}
+
+.pagination ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.pagination a {
+  display: inline-block;
+  padding: 10px 18px;
+  color: #222;
+}
+
+.p6 a {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  padding: 0;
+  margin: auto 5px;
+  text-align: center;
+  position: relative;
+  background-color: $primary-color;
+}
+
+.p6 .is_active {
+  background-color: $tertiary-color;
+}
+
+// ul.pagination {
+//   --bs-pagination-border-color: black;
+//   .page-item {
+//     .page-link {
+//       color: $secondary-color;
+
+//       &:hover {
+//         background-color: gray;
+//         color: $secondary-color;
+//         border-color: $secondary-color;
+//       }
+//     }
+
+//     &.active {
+//       .page-link {
+//         background-color: gray;
+//         border-color: $secondary-color;
+//       }
+//     }
+//   }
+// }
 </style>
