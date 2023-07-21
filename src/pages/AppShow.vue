@@ -204,7 +204,7 @@ a {
   line-height: 1.9;
   text-align: left;
   font-size: 120%;
-  cursor: no-drop;
+  cursor: default;
   color: #fff;
   height: 100%;
   width: 100%;
@@ -222,9 +222,6 @@ a {
 
 .info ul li {
   transition: 0.3s ease;
-}
-.info ul li:hover {
-  transform: translateX(50px) scale(1.3);
 }
 
 .product-image:hover img {
