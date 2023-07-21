@@ -138,10 +138,6 @@ export default {};
     
     <div class="container py-5 d-flex justify-content-center">
       <button>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
       <router-link class="text-decoration-none" :to="{ name: 'drinks' }"
         >I nostri cocktails</router-link
       >
