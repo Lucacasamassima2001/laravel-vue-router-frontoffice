@@ -147,15 +147,15 @@ a {
 #container .product-details h1:before {
   position: absolute;
   content: "";
-  right: -10%;
-  top: 0%;
+  left: -10%;
+  top: 240px;
   transform: translate(25px, -15px);
   font-family: "Farsan", cursive;
   display: inline-block;
   background: rgb(135, 39, 213);
   border-radius: 5px;
-  font-size: 14px;
-  padding: 5px;
+  font-size: 18px;
+  padding: 9px;
   color: #fff;
   margin: 0;
   animation: chan-sh 6s ease infinite;
