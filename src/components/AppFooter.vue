@@ -15,27 +15,27 @@ export default {};
       <ul class="footer-links d-flex gap-2">
         <li class="list-unstyled">
           <router-link :to="{ name: 'home' }">
-            <a class="nav-link active" aria-current="page">Home</a>
+            Home
           </router-link>
         </li>
 
         <li class="list-unstyled">
           <router-link :to="{ name: 'about' }">
-            <a class="nav-link active" aria-current="page">About</a>
+            About
           </router-link>
         </li>
 
         <li class="list-unstyled">
           <router-link :to="{ name: 'drinks' }">
-            <a class="nav-link active" aria-current="page">Drinks</a>
+            Drinks
           </router-link>
         </li>
 
-        <li class="list-unstyled">
+        <!-- <li class="list-unstyled">
           <router-link :to="{ name: 'contacts' }">
-            <a class="nav-link active" aria-current="page">Contacts</a>
+            Contacts
           </router-link>
-        </li>
+        </li> -->
       </ul>
 
       <div class="text-light">MixTales &copy; 2023</div>
@@ -44,6 +44,11 @@ export default {};
 </template>
 
 <style lang="scss" scoped>
+$primary-color: #da00ff;
+
+li {
+  color: $primary-color;
+}
 .footer-distributed {
   background-color: #292c2f;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
