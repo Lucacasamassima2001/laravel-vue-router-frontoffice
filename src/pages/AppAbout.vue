@@ -137,7 +137,7 @@ export default {};
     </div>
     <div class="start mb-5">
       <router-link class="home-button" :to="{ name: 'drinks' }"
-        >Inizia il racconto</router-link
+        >I Nostri Drink</router-link
       >
     </div>
   </div>
