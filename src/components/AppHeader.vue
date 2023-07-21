@@ -8,7 +8,7 @@ export default {
 </script>
 
 <template>
-  <header class="bg-dark fixed-top d-flex">
+  <header class="bg-dark fixed-top d-flex flex-row justify-content-between px-4">
     <h1 class="text-center text-light py-1">MixTales</h1>
     <AppNav />
   </header>
@@ -16,6 +16,6 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  height: 5rem;
+  height: 4.5rem;
 }
 </style>
