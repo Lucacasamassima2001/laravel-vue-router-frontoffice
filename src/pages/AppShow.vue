@@ -50,7 +50,7 @@ export default {
 <template>
   <div id="container">
     <!-- Start	Product details -->
-    <div class="product-details">
+    <div class="product-details" v-if="drink">
       <!-- 	Product Name -->
       <h1>{{ drink.strDrink }}</h1>
 
@@ -74,7 +74,7 @@ export default {
 
     <!-- 	Start product image & Information -->
 
-    <div class="product-image">
+    <div class="product-image" v-if="drink">
       <img :src="drink.strDrinkThumb" :alt="drink.strDrink" />
 
       <!-- 	product Information-->
