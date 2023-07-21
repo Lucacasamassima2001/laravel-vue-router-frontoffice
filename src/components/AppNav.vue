@@ -23,11 +23,11 @@ export default {};
         </router-link>
       </li>
 
-      <!-- <li class="list-unstyled">
+      <li class="list-unstyled">
         <router-link :to="{ name: 'contacts' }">
-          <a class="nav-link active" aria-current="page">Contacts</a>
+          <button class="button">CONTACTS</button>
         </router-link>
-      </li> -->
+      </li>
     </ul>
   </nav>
 </template>
