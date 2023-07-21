@@ -19,7 +19,7 @@ export default {};
       <i class="fa-solid fa-quote-right"></i>
     </div>
 
-    <div class="container py-3">
+    <div class="container py-5">
       <h2>La nostra filosofia...</h2>
       <div class="container d-flex">
         <p class="fs-4">
@@ -30,10 +30,10 @@ export default {};
           selezionati con attenzione per garantire un gusto superiore e
           un'esperienza gustativa indimenticabile.
         </p>
-        <div class="philosophy">
+        <div class="philosophy mx-5">
           <div class="philosopy_content">
             <img
-              style="height: 240px; border-radius: 20px; width: 250px"
+              style="height: 240px; border-radius: 20px; width: 250px;"
               src="../../public/drink.philosophy.jpg"
               alt=""
             />
