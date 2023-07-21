@@ -26,11 +26,11 @@ export default {};
               </router-link>
             </li>
 
-            <!-- <li class="list-unstyled">
+            <li class="list-unstyled">
               <router-link :to="{ name: 'contacts' }">
                 Contacts
               </router-link>
-            </li> -->
+            </li>
           </ul>
           
           <div class="text-light">MixTales &copy; 2023</div>
