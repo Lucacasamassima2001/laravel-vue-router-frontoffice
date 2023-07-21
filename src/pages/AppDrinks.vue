@@ -94,7 +94,7 @@ export default {
                 :src="drink.strDrinkThumb"
                 :alt="drink.strDrink"
               />
-              <p>{{ drink.strDrink }}</p>
+              <p class="fs-6">{{ drink.strDrink }}</p>
             </div>
           </router-link>
         </div>

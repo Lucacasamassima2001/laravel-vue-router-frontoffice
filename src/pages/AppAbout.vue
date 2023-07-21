@@ -19,7 +19,7 @@ export default {};
       <i class="fa-solid fa-quote-right"></i>
     </div>
 
-    <div class="container py-3">
+    <div class="container py-5">
       <h2>La nostra filosofia...</h2>
       <div class="container d-flex">
         <p class="fs-4">
@@ -30,10 +30,10 @@ export default {};
           selezionati con attenzione per garantire un gusto superiore e
           un'esperienza gustativa indimenticabile.
         </p>
-        <div class="philosophy">
+        <div class="philosophy mx-5">
           <div class="philosopy_content">
             <img
-              style="height: 240px; border-radius: 20px; width: 250px"
+              style="height: 240px; border-radius: 20px; width: 250px;"
               src="../../public/drink.philosophy.jpg"
               alt=""
             />
@@ -123,7 +123,7 @@ export default {};
       </div>
     </div>
 
-    <div class="container py-5 my-5">
+    <div class="container py-3 my-1">
       <div class="text-center">
         <i class="fa-solid fa-quote-left"></i>
         <h3 style="font-style: italic">
@@ -135,15 +135,15 @@ export default {};
         <i class="fa-solid fa-quote-right"></i>
       </div>
     </div>
-    <button>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
+    
+    <div class="container py-5 d-flex justify-content-center">
+      <button>
       <router-link class="text-decoration-none" :to="{ name: 'drinks' }"
-        >Torna alla lista dei Drinks</router-link
+        >I nostri cocktails</router-link
       >
     </button>
+    </div>
+    
   </div>
 </template>
 
@@ -204,9 +204,6 @@ h2 {
 // BOTTONE PER TORNARE ALLA LISTA DEI DRINKS
 
 button {
-  position: relative;
-  bottom: 50px;
-  left: 42%;
   padding: 1em 1.8em;
   outline: none;
   border: 1px solid #303030;

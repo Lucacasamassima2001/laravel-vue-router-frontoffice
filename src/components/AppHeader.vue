@@ -8,6 +8,7 @@ export default {
 </script>
 
 <template>
+
   <header class="fixed-top container-fluid">
     <div class="row row-cols row-cols-md row-cols-sm">
       
@@ -26,6 +27,21 @@ export default {
         <AppNav />
 
       </div>
+
+  <header
+    class="bg-dark fixed-top d-flex flex-row justify-content-between px-4"
+  >
+    <div class="logo d-flex">
+      <router-link
+        class="logo d-flex text-decoration-none"
+        :to="{ name: 'home' }"
+      >
+        <img src="../../public/favicon-32x32.png" alt="logo-nav" />
+        <div class="text-center text-light fs-4 pt-3 fw-bold logo_text">
+          MIXTALES
+        </div>
+      </router-link>
+
     </div>
   </header>
 </template>
