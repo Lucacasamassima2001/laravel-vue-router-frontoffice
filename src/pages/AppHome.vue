@@ -187,7 +187,7 @@ h1 {
 }
 
 .wrapper {
-	height: calc(100vh - 20rem);
+	height: calc(100vh - 25rem);
 	width: 90%;
 	margin: 0 auto;
 	display: grid;
