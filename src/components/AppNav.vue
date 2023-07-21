@@ -3,8 +3,8 @@ export default {};
 </script>
 
 <template>
-  <nav class="bg-dark py-2">
-    <ul class="footer-links d-flex gap-2 justify-content-center">
+  <nav class="bg-dark py-2 d-flex align-items-center">
+    <ul class="footer-links d-flex  gap-2 justify-content-center">
       <li class="list-unstyled">
         <router-link :to="{ name: 'home' }">
           <a class="nav-link active" aria-current="page">Home</a>
