@@ -12,7 +12,9 @@ export default {
 
 <template>
   <AppHeader />
-  <router-view></router-view>
+  <div class="container-fluid">
+    <router-view></router-view>
+  </div>
   <AppFooter />
 </template>
 

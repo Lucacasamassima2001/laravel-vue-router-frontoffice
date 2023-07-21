@@ -3,7 +3,7 @@ export default {};
 </script>
 
 <template>
-  <div class="container-big about py-5">
+  <div class="container-fluid about py-5">
     <h1 style="font-style: italic; font-size: 4em" class="text-center py-3">
       Chi siamo...
     </h1>

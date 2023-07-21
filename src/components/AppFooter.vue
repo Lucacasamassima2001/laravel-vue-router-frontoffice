@@ -4,41 +4,45 @@ export default {};
 
 <template>
   <footer class="footer-distributed container-fluid fixed-bottom">
-    <div class="footer-right">
-      <a href="#"><i class="fa-brands fa-facebook"></i></a>
-      <a href="#"><i class="fa-brands fa-twitter"></i></a>
-      <a href="#"><i class="fa-brands fa-instagram"></i></a>
-      <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-    </div>
+    <div class="row row-cols row-cols-md row-cols-sm">
+      <div class="contents d-flex justify-content-between z-1">
+        <div class="footer-left">
+          <ul class="footer-links d-flex gap-2">
+            <li class="list-unstyled">
+              <router-link :to="{ name: 'home' }">
+                Home
+              </router-link>
+            </li>
 
-    <div class="footer-left">
-      <ul class="footer-links d-flex gap-2">
-        <li class="list-unstyled">
-          <router-link :to="{ name: 'home' }">
-            Home
-          </router-link>
-        </li>
+            <li class="list-unstyled">
+              <router-link :to="{ name: 'about' }">
+                Chi siamo
+              </router-link>
+            </li>
 
-        <li class="list-unstyled">
-          <router-link :to="{ name: 'about' }">
-            About
-          </router-link>
-        </li>
+            <li class="list-unstyled">
+              <router-link :to="{ name: 'drinks' }">
+                Cocktails
+              </router-link>
+            </li>
 
-        <li class="list-unstyled">
-          <router-link :to="{ name: 'drinks' }">
-            Drinks
-          </router-link>
-        </li>
+            <!-- <li class="list-unstyled">
+              <router-link :to="{ name: 'contacts' }">
+                Contacts
+              </router-link>
+            </li> -->
+          </ul>
+          
+          <div class="text-light">MixTales &copy; 2023</div>
+        </div>
 
-        <!-- <li class="list-unstyled">
-          <router-link :to="{ name: 'contacts' }">
-            Contacts
-          </router-link>
-        </li> -->
-      </ul>
-
-      <div class="text-light">MixTales &copy; 2023</div>
+        <div class="footer-right">
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
     </div>
   </footer>
 </template>
@@ -48,21 +52,6 @@ $primary-color: #da00ff;
 
 li {
   color: $primary-color;
-}
-.footer-distributed {
-  background-color: #292c2f;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-  box-sizing: border-box;
-  width: 100%;
-  text-align: left;
-  padding: 10px 50px;
-  height: 5rem;
-}
-
-.footer-distributed .footer-left ul {
-  color: #8f9296;
-  font-size: 14px;
-  margin: 0;
 }
 
 /* FOOTER LINKS */
@@ -123,21 +112,5 @@ li {
 
 .footer-distributed ul.footer-links a:hover {
   text-decoration: underline;
-}
-
-/* Media Queries */
-
-@media (max-width: 600px) {
-  .footer-distributed .footer-left,
-  .footer-distributed .footer-right {
-    text-align: center;
-  }
-  .footer-distributed .footer-right {
-    float: none;
-    margin: 0 auto 20px;
-  }
-  .footer-distributed .footer-left ul.footer-links {
-    line-height: 1.8;
-  }
 }
 </style>
