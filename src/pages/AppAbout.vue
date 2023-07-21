@@ -123,7 +123,7 @@ export default {};
       </div>
     </div>
 
-    <div class="container py-5 my-5">
+    <div class="container py-3 my-1">
       <div class="text-center">
         <i class="fa-solid fa-quote-left"></i>
         <h3 style="font-style: italic">
@@ -135,15 +135,19 @@ export default {};
         <i class="fa-solid fa-quote-right"></i>
       </div>
     </div>
-    <button>
+    
+    <div class="container py-5 d-flex justify-content-center">
+      <button>
       <span></span>
       <span></span>
       <span></span>
       <span></span>
       <router-link class="text-decoration-none" :to="{ name: 'drinks' }"
-        >Torna alla lista dei Drinks</router-link
+        >I nostri cocktails</router-link
       >
     </button>
+    </div>
+    
   </div>
 </template>
 
@@ -204,9 +208,6 @@ h2 {
 // BOTTONE PER TORNARE ALLA LISTA DEI DRINKS
 
 button {
-  position: relative;
-  bottom: 50px;
-  left: 42%;
   padding: 1em 1.8em;
   outline: none;
   border: 1px solid #303030;
