@@ -67,17 +67,7 @@ export default {
 
 <template>
   <main>
-    <img
-      class="bg_bar z-1"
-      src="../../public/bg-drink-index.png"
-      alt="bg-index"
-    />
-    <img
-      class="bg_drink z-1"
-      src="../../public/bg-drink-index.png"
-      alt="bg-index-drink"
-    />
-    
+
     <div class="container">
       
       <h1 class="text-center mt-3">I Nostri Cocktails</h1>
