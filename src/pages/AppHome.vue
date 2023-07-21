@@ -392,7 +392,7 @@ button span:nth-child(3) {
   width: 100%;
   height: 2px;
   background: linear-gradient(90deg, transparent, #001eff);
-=======
+}
 .start {
 	width: 100%;
 	display: flex;
